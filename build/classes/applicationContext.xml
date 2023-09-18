@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置课程类 -->
+    <bean id="course" class="reflect_in.Course">
+        <constructor-arg value="Java编程"/>
+    </bean>
+
+    <!-- 配置学生类，并注入课程依赖 -->
+    <bean id="student" class="reflect_in.Student">
+        <constructor-arg value="Alice"/>
+        <constructor-arg value="101"/>
+        <property name="course" ref="course"/>
+    </bean>
+
+</beans>
